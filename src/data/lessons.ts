@@ -12,7 +12,7 @@
  *   - thumbnail: the wide card image, in public/thumbnails/ (960x540)
  *   - poster: the image in the player before it plays, in public/posters/
  *     (720x1280 for vertical videos). Falls back to the thumbnail.
- *   - The current covers are Coco from the Sheet A expressions; see scripts/make-covers.py.
+ *   - The current covers are rockstar Coco, one pose per lesson; see scripts/make-rockstar-covers.py.
  *   - Leave both out and the lesson shows a drawn pattern instead.
  *
  * Shape (optional)

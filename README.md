@@ -38,7 +38,9 @@ The landing and completion words are in **`src/data/course.ts`**.
 
 Covers: `thumbnail` is the wide card image (`public/thumbnails/`), `poster` the tall image in the player before it plays (`public/posters/`). Without either, each lesson gets its own drawn pattern.
 
-The current covers are Coco, cut from Cassidy's own expression sheet (Sheet A), one expression per lesson: 1 Happy High, 2 Zen Mode, 3 Chill Vibes, 4 Powered Up, 5 Lovestruck, 6 Focused Flow, 7 Mega Mind. Rebuild them, or swap an expression, with `scripts/make-covers.py`.
+The current covers are rockstar Coco from Cassidy's "Chill Rockstar Monkey Sticker Set", one pose per lesson in sheet order (top row left to right, then the bottom row): 1 peace sign, 2 laughing fist, 3 singing out, 4 meditating, 5 hand behind head, 6 heart hands, 7 lightbulb idea. Rebuild them with `scripts/make-rockstar-covers.py` (steps in the file).
+
+The landing-page star (`public/coco-rockstar*.webp`) and the top-bar badge (`public/coco-mascot.png`) come from Cassidy's main rockstar Coco. The image generator drew a checkerboard into both images instead of real transparency; `scripts/cutout-checkerboard.py` removes it.
 
 ## How it's built
 
