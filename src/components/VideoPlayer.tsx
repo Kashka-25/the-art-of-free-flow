@@ -6,6 +6,8 @@ interface Props {
   poster?: string;
   /** Used for accessible labels, e.g. "Lesson 3: Finding Your Rhythm". */
   label: string;
+  /** The expected shape, so the frame is right before the video loads. Corrected from the file itself once it loads. */
+  shape?: 'portrait' | 'landscape';
   /** Fires once, when the learner reaches the last few percent or the end. */
   onWatched?: () => void;
 }
@@ -20,7 +22,7 @@ type FsVideo = HTMLVideoElement & { webkitEnterFullscreen?: () => void };
  * Never autoplays. Loads only metadata until the learner presses play.
  * Keys (when the player has focus): Space/K play, ←/→ 5s, ↑/↓ volume, M mute, F fullscreen.
  */
-export function VideoPlayer({ src, poster, label, onWatched }: Props) {
+export function VideoPlayer({ src, poster, label, shape = 'landscape', onWatched }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const video = useRef<FsVideo>(null);
   const watchedFired = useRef(false);
@@ -37,6 +39,8 @@ export function VideoPlayer({ src, poster, label, onWatched }: Props) {
   const [missing, setMissing] = useState(false);
   const [waiting, setWaiting] = useState(false);
   const [idle, setIdle] = useState(false);
+  const [portrait, setPortrait] = useState(shape === 'portrait');
+  useEffect(() => setPortrait(shape === 'portrait'), [shape, src]);
 
   // A new lesson: start fresh.
   useEffect(() => {
@@ -146,7 +150,7 @@ export function VideoPlayer({ src, poster, label, onWatched }: Props) {
   return (
     <div
       ref={wrap}
-      className={`player${playing ? ' is-playing' : ''}${showControls ? ' show-controls' : ''}${fullscreen ? ' is-fullscreen' : ''}`}
+      className={`player${playing ? ' is-playing' : ''}${showControls ? ' show-controls' : ''}${fullscreen ? ' is-fullscreen' : ''}${portrait ? ' is-portrait' : ''}`}
       tabIndex={0}
       role="region"
       aria-label={`Video player: ${label}`}
@@ -175,7 +179,11 @@ export function VideoPlayer({ src, poster, label, onWatched }: Props) {
           setPlaying(false);
           fireWatched();
         }}
-        onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+        onLoadedMetadata={(e) => {
+          const v = e.currentTarget;
+          setDuration(v.duration);
+          if (v.videoWidth && v.videoHeight) setPortrait(v.videoHeight > v.videoWidth);
+        }}
         onDurationChange={(e) => setDuration(e.currentTarget.duration)}
         onTimeUpdate={onTimeUpdate}
         onProgress={onProgress}

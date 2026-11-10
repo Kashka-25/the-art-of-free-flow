@@ -27,6 +27,8 @@ Hosting a video elsewhere? Put the full address there instead, e.g. `video: 'htt
 
 Until a file exists, that lesson shows "This lesson's video is on its way."
 
+The current seven were converted from the phone originals (HEVC, ~15 Mbit/s, 250–485 MB each) to H.264 720×1280 at about 1.5 Mbit/s with fast start, 26–46 MB each. The cover stills in `public/thumbnails/` are frames from each video.
+
 Tips: export as MP4 (H.264 + AAC) with "fast start" / "web optimised" ticked, so playback can begin before the whole file downloads. GitHub refuses files over 100 MB; host bigger videos elsewhere and use the URL.
 
 ## Change lesson titles, descriptions and prompts

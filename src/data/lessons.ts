@@ -12,6 +12,9 @@
  *   - Put an image in  public/thumbnails/  and write  'thumbnails/lesson-01.jpg'
  *   - Leave it out and the lesson shows a drawn pattern instead.
  *
+ * Shape (optional)
+ *   - 'portrait' for vertical (phone) videos, 'landscape' for wide ones (the default).
+ *
  * Duration (optional)
  *   - Any short text, e.g. '8 min'. Leave it out if you don't know it yet.
  *
@@ -28,6 +31,8 @@ export interface Lesson {
   video: string;
   /** Optional poster image: local path inside public/ or a full URL. */
   thumbnail?: string;
+  /** 'portrait' for vertical phone videos. Default 'landscape' (16:9). */
+  shape?: 'portrait' | 'landscape';
   /** Optional, e.g. '9 min'. */
   duration?: string;
   /** Gentle questions shown above the journal. Leave the list empty for none. */
@@ -49,6 +54,9 @@ export const lessons: Lesson[] = [
     title: 'Introduction to Free Flow',
     description: PLACEHOLDER,
     video: 'videos/lesson-01.mp4',
+    thumbnail: 'thumbnails/lesson-01.jpg',
+    shape: 'portrait',
+    duration: '3 min',
     prompts: DEFAULT_PROMPTS,
   },
   {
@@ -56,6 +64,9 @@ export const lessons: Lesson[] = [
     title: 'Letting Go of the Mind',
     description: PLACEHOLDER,
     video: 'videos/lesson-02.mp4',
+    thumbnail: 'thumbnails/lesson-02.jpg',
+    shape: 'portrait',
+    duration: '3 min',
     prompts: DEFAULT_PROMPTS,
   },
   {
@@ -63,6 +74,9 @@ export const lessons: Lesson[] = [
     title: 'Finding Your Rhythm',
     description: PLACEHOLDER,
     video: 'videos/lesson-03.mp4',
+    thumbnail: 'thumbnails/lesson-03.jpg',
+    shape: 'portrait',
+    duration: '3 min',
     prompts: DEFAULT_PROMPTS,
   },
   {
@@ -70,6 +84,9 @@ export const lessons: Lesson[] = [
     title: 'Overcoming the Inner Critic',
     description: PLACEHOLDER,
     video: 'videos/lesson-04.mp4',
+    thumbnail: 'thumbnails/lesson-04.jpg',
+    shape: 'portrait',
+    duration: '3 min',
     prompts: DEFAULT_PROMPTS,
   },
   {
@@ -77,6 +94,9 @@ export const lessons: Lesson[] = [
     title: 'Trusting Your Instincts',
     description: PLACEHOLDER,
     video: 'videos/lesson-05.mp4',
+    thumbnail: 'thumbnails/lesson-05.jpg',
+    shape: 'portrait',
+    duration: '2 min',
     prompts: DEFAULT_PROMPTS,
   },
   {
@@ -84,6 +104,9 @@ export const lessons: Lesson[] = [
     title: 'Developing Your Flow',
     description: PLACEHOLDER,
     video: 'videos/lesson-06.mp4',
+    thumbnail: 'thumbnails/lesson-06.jpg',
+    shape: 'portrait',
+    duration: '4 min',
     prompts: DEFAULT_PROMPTS,
   },
   {
@@ -91,6 +114,9 @@ export const lessons: Lesson[] = [
     title: 'Freestyle in Practice',
     description: PLACEHOLDER,
     video: 'videos/lesson-07.mp4',
+    thumbnail: 'thumbnails/lesson-07.jpg',
+    shape: 'portrait',
+    duration: '4 min',
     prompts: DEFAULT_PROMPTS,
   },
 ];

@@ -49,7 +49,7 @@ export function CoursePage({ number }: { number: number }) {
 
   return (
     <main id="main" className="lesson" key={number}>
-      <section className="stage" aria-labelledby="lesson-title">
+      <section className={`stage${lesson.shape === 'portrait' ? ' stage--portrait' : ''}`} aria-labelledby="lesson-title">
         <div className="stage__inner page-enter">
           <header className="stage__head">
             <p className="eyebrow eyebrow--light">
@@ -64,6 +64,7 @@ export function CoursePage({ number }: { number: number }) {
             src={mediaUrl(lesson.video)!}
             poster={mediaUrl(lesson.thumbnail)}
             label={`Lesson ${number}: ${lesson.title}`}
+            shape={lesson.shape}
             onWatched={() => complete(number)}
           />
         </div>

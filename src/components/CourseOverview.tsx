@@ -12,7 +12,10 @@ export function CourseOverview({ scrollIntoView }: { scrollIntoView: boolean }) 
   const next = hasStarted(progress) && !isCourseComplete(progress, total) ? resumeLesson(progress, total) : null;
 
   useEffect(() => {
-    if (scrollIntoView) ref.current?.scrollIntoView({ block: 'start' });
+    if (!scrollIntoView) return;
+    // After the page's own scroll-to-top has run.
+    const id = requestAnimationFrame(() => ref.current?.scrollIntoView({ block: 'start' }));
+    return () => cancelAnimationFrame(id);
   }, [scrollIntoView]);
 
   return (
