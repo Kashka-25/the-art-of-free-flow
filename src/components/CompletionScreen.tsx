@@ -3,7 +3,7 @@ import { lessons } from '../data/lessons';
 import { href } from '../lib/route';
 import { isCourseComplete, resumeLesson } from '../lib/progress';
 import { usePageFocus, useProgress } from '../lib/useProgress';
-import { pad2 } from '../lib/media';
+import { mediaUrl, pad2 } from '../lib/media';
 import { FlowLines } from './FlowLines';
 
 export function CompletionScreen() {
@@ -35,6 +35,14 @@ export function CompletionScreen() {
     <main id="main" className="completion page-enter">
       <FlowLines className="completion__lines" />
       <div className="completion__inner">
+        <img
+          className="completion__star rise"
+          src={mediaUrl('coco-rockstar-small.webp')}
+          alt=""
+          width={520}
+          height={647}
+          decoding="async"
+        />
         <p className="eyebrow rise">Seven of seven</p>
         <h1 className="completion__title rise" ref={heading} tabIndex={-1}>
           {course.completion.heading}

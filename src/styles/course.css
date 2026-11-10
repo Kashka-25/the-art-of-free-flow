@@ -465,6 +465,33 @@ button {
   background: var(--clay);
 }
 
+/* Rockstar Coco: beside the title on wide screens, under the buttons on phones. */
+.hero__star {
+  display: block;
+  width: min(78%, 360px);
+  height: auto;
+  margin: 44px auto 0;
+  filter: drop-shadow(0 18px 30px rgba(42, 34, 27, 0.22));
+}
+
+@media (min-width: 960px) {
+  .hero__star {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: auto;
+    height: min(74vh, 600px);
+  }
+  .hero__inner > :not(.hero__star) {
+    max-width: calc(100% - min(74vh, 600px) * 0.8);
+  }
+  .hero__title-flow {
+    font-size: clamp(3.6rem, 1rem + 8.4vw, 9rem);
+  }
+}
+
 .hero__lines {
   position: absolute;
   left: 0;
@@ -1389,6 +1416,13 @@ button {
   display: grid;
   justify-items: center;
   gap: 28px;
+}
+
+.completion__star {
+  width: clamp(150px, 20vw, 220px);
+  height: auto;
+  margin-bottom: -6px;
+  filter: drop-shadow(0 14px 24px rgba(42, 34, 27, 0.2));
 }
 
 .completion__title {

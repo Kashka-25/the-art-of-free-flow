@@ -3,7 +3,7 @@ import { lessons } from '../data/lessons';
 import { href } from '../lib/route';
 import { hasStarted, isCourseComplete, resumeLesson } from '../lib/progress';
 import { useProgress } from '../lib/useProgress';
-import { pad2 } from '../lib/media';
+import { mediaUrl, pad2 } from '../lib/media';
 import { FlowLines } from './FlowLines';
 import type { CSSProperties, Ref } from 'react';
 
@@ -65,6 +65,18 @@ export function Hero({ headingRef }: { headingRef: Ref<HTMLHeadingElement> }) {
             <li key={f}>{f}</li>
           ))}
         </ul>
+        <img
+          className="hero__star rise"
+          style={delay(200)}
+          src={mediaUrl('coco-rockstar.webp')}
+          srcSet={`${mediaUrl('coco-rockstar-small.webp')} 520w, ${mediaUrl('coco-rockstar.webp')} 900w`}
+          sizes="(min-width: 960px) 40vw, 80vw"
+          alt="Coco, the course's mascot: a chill monkey in an orange beanie and sunglasses, sitting cross-legged on a cloud with a golden microphone, making a peace sign"
+          width={900}
+          height={1119}
+          decoding="async"
+          fetchPriority="high"
+        />
       </div>
       <FlowLines className="hero__lines" />
     </header>
