@@ -1,0 +1,27 @@
+{
+  "name": "the-art-of-free-flow",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The Art of Free Flow: a free seven-part freestyle course.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5300",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview --port 5301",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fontsource-variable/figtree": "^5.3.0",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}
