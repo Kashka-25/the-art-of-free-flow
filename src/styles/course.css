@@ -312,6 +312,60 @@ button {
   outline-color: var(--ochre);
 }
 
+/* Coco, the mascot: top centre on wide screens, top right corner on phones. */
+.topbar__mascot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 3px rgba(169, 74, 42, 0.45),
+    0 6px 16px -6px rgba(42, 34, 27, 0.45);
+}
+
+.topbar--dark .topbar__mascot {
+  box-shadow:
+    0 0 0 2px var(--night),
+    0 0 0 3px rgba(196, 146, 74, 0.6),
+    0 6px 16px -6px rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 720px) {
+  .topbar__mascot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 719px) {
+  .topbar__mascot {
+    order: 1;
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+  }
+  .topbar__links {
+    order: 2;
+  }
+  .topbar .tracker {
+    order: 2;
+    flex-basis: 100%;
+  }
+  /* Phones: Lessons / Journal sit under the title row, Coco keeps the corner. */
+  .topbar__links {
+    flex-basis: 100%;
+    gap: 20px;
+  }
+  .hero {
+    padding-top: 160px;
+  }
+  .journal-page {
+    padding-top: 170px;
+  }
+}
+
 /* ---------- Hero ---------- */
 
 .hero {

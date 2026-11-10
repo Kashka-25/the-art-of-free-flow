@@ -1,7 +1,8 @@
 """Builds the lesson covers from Cassidy's Coco expression sheet (Sheet A).
 
 Usage:  python scripts/make-covers.py "<path to Atlantean Gardens_ Cosmic Brown Expressions.png>" public
-Writes public/thumbnails/lesson-0N.jpg (960x540) and public/posters/lesson-0N.jpg (720x1280).
+Writes public/thumbnails/lesson-0N.jpg (960x540), public/posters/lesson-0N.jpg (720x1280)
+and public/coco-mascot.png (the round Chill Vibes Coco in the top bar).
 Change LESSONS below to give a lesson a different expression. Needs Pillow.
 """
 import math, random, sys
@@ -83,6 +84,18 @@ def cover(n, w, h, art_h_frac, ground_hex=None, art_cy=0.5, lines_cy=0.5, alpha_
     ground.paste(fr, (0, 0), fr)
     ground.paste(art, (x, y), rounded_mask((aw, ah), radius))
     return ground
+
+def mascot(size=160, ss=4):
+    """Round 'Chill Vibes' Coco for the top bar, transparent outside the circle."""
+    art = panel('chill')
+    cx, cy, half = 146, 106, 100  # his face, beanie to chin, within the panel
+    face = art.crop((cx - half, cy - half, cx + half, cy + half)).resize((size, size), Image.LANCZOS)
+    m = Image.new('L', (size * ss, size * ss), 0)
+    ImageDraw.Draw(m).ellipse((0, 0, size * ss - 1, size * ss - 1), fill=255)
+    out = face.convert('RGBA'); out.putalpha(m.resize((size, size), Image.LANCZOS))
+    return out
+
+mascot().save(f'{OUT}/coco-mascot.png', optimize=True)
 
 for n in LESSONS:
     cover(n, 960, 540, 0.66).save(f'{OUT}/thumbnails/lesson-0{n}.jpg', quality=86, optimize=True, progressive=True)

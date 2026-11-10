@@ -8,6 +8,7 @@ import { JournalPage } from './pages/JournalPage';
 import { hasStarted } from './lib/progress';
 import { go, href, useRoute } from './lib/route';
 import { useProgress } from './lib/useProgress';
+import { mediaUrl } from './lib/media';
 import { useEffect } from 'react';
 
 export function App() {
@@ -51,6 +52,15 @@ export function App() {
             <a href={href.journal()} aria-current={route.name === 'journal' ? 'page' : undefined}>Journal</a>
           </nav>
         )}
+        <img
+          className="topbar__mascot"
+          src={mediaUrl('coco-mascot.png')}
+          alt=""
+          title="Coco"
+          width={44}
+          height={44}
+          decoding="async"
+        />
       </div>
 
       {route.name === 'lesson' ? (
