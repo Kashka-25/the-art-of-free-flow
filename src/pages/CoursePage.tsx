@@ -62,7 +62,7 @@ export function CoursePage({ number }: { number: number }) {
           </header>
           <VideoPlayer
             src={mediaUrl(lesson.video)!}
-            poster={mediaUrl(lesson.thumbnail)}
+            poster={mediaUrl(lesson.poster ?? lesson.thumbnail)}
             label={`Lesson ${number}: ${lesson.title}`}
             shape={lesson.shape}
             onWatched={() => complete(number)}

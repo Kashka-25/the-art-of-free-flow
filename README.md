@@ -27,7 +27,7 @@ Hosting a video elsewhere? Put the full address there instead, e.g. `video: 'htt
 
 Until a file exists, that lesson shows "This lesson's video is on its way."
 
-The current seven were converted from the phone originals (HEVC, ~15 Mbit/s, 250–485 MB each) to H.264 720×1280 at about 1.5 Mbit/s with fast start, 26–46 MB each. The cover stills in `public/thumbnails/` are frames from each video.
+The current seven were converted from the phone originals (HEVC, ~15 Mbit/s, 250–485 MB each) to H.264 720×1280 at about 1.5 Mbit/s with fast start, 26–46 MB each. 
 
 Tips: export as MP4 (H.264 + AAC) with "fast start" / "web optimised" ticked, so playback can begin before the whole file downloads. GitHub refuses files over 100 MB; host bigger videos elsewhere and use the URL.
 
@@ -36,7 +36,9 @@ Tips: export as MP4 (H.264 + AAC) with "fast start" / "web optimised" ticked, so
 Everything lives in **`src/data/lessons.ts`**: one block per lesson with `title`, `description`, `video`, optional `thumbnail` and `duration`, and the `prompts` shown above the journal.
 The landing and completion words are in **`src/data/course.ts`**.
 
-Optional thumbnails go in `public/thumbnails/` (e.g. `thumbnail: 'thumbnails/lesson-01.jpg'`). Without one, each lesson gets its own drawn pattern.
+Covers: `thumbnail` is the wide card image (`public/thumbnails/`), `poster` the tall image in the player before it plays (`public/posters/`). Without either, each lesson gets its own drawn pattern.
+
+The current covers are Coco, cut from Cassidy's own expression sheet (Sheet A), one expression per lesson: 1 Happy High, 2 Zen Mode, 3 Chill Vibes, 4 Powered Up, 5 Lovestruck, 6 Focused Flow, 7 Mega Mind. Rebuild them, or swap an expression, with `scripts/make-covers.py`.
 
 ## How it's built
 

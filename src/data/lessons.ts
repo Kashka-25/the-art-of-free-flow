@@ -8,9 +8,12 @@
  *   - Local file:  put it in  public/videos/  and write  'videos/lesson-01.mp4'
  *   - Hosted file: write the full address, e.g. 'https://example.com/lesson-01.mp4'
  *
- * Thumbnails (optional)
- *   - Put an image in  public/thumbnails/  and write  'thumbnails/lesson-01.jpg'
- *   - Leave it out and the lesson shows a drawn pattern instead.
+ * Covers (optional)
+ *   - thumbnail: the wide card image, in public/thumbnails/ (960x540)
+ *   - poster: the image in the player before it plays, in public/posters/
+ *     (720x1280 for vertical videos). Falls back to the thumbnail.
+ *   - The current covers are Coco from the Sheet A expressions; see scripts/make-covers.py.
+ *   - Leave both out and the lesson shows a drawn pattern instead.
  *
  * Shape (optional)
  *   - 'portrait' for vertical (phone) videos, 'landscape' for wide ones (the default).
@@ -29,8 +32,10 @@ export interface Lesson {
   description: string;
   /** Local path inside public/ (e.g. 'videos/lesson-01.mp4') or a full https:// URL. */
   video: string;
-  /** Optional poster image: local path inside public/ or a full URL. */
+  /** Optional cover for the lesson card (16:9): local path inside public/ or a full URL. */
   thumbnail?: string;
+  /** Optional cover shown in the player before it plays. Falls back to the thumbnail. */
+  poster?: string;
   /** 'portrait' for vertical phone videos. Default 'landscape' (16:9). */
   shape?: 'portrait' | 'landscape';
   /** Optional, e.g. '9 min'. */
@@ -55,6 +60,7 @@ export const lessons: Lesson[] = [
     description: PLACEHOLDER,
     video: 'videos/lesson-01.mp4',
     thumbnail: 'thumbnails/lesson-01.jpg',
+    poster: 'posters/lesson-01.jpg',
     shape: 'portrait',
     duration: '3 min',
     prompts: DEFAULT_PROMPTS,
@@ -65,6 +71,7 @@ export const lessons: Lesson[] = [
     description: PLACEHOLDER,
     video: 'videos/lesson-02.mp4',
     thumbnail: 'thumbnails/lesson-02.jpg',
+    poster: 'posters/lesson-02.jpg',
     shape: 'portrait',
     duration: '3 min',
     prompts: DEFAULT_PROMPTS,
@@ -75,6 +82,7 @@ export const lessons: Lesson[] = [
     description: PLACEHOLDER,
     video: 'videos/lesson-03.mp4',
     thumbnail: 'thumbnails/lesson-03.jpg',
+    poster: 'posters/lesson-03.jpg',
     shape: 'portrait',
     duration: '3 min',
     prompts: DEFAULT_PROMPTS,
@@ -85,6 +93,7 @@ export const lessons: Lesson[] = [
     description: PLACEHOLDER,
     video: 'videos/lesson-04.mp4',
     thumbnail: 'thumbnails/lesson-04.jpg',
+    poster: 'posters/lesson-04.jpg',
     shape: 'portrait',
     duration: '3 min',
     prompts: DEFAULT_PROMPTS,
@@ -95,6 +104,7 @@ export const lessons: Lesson[] = [
     description: PLACEHOLDER,
     video: 'videos/lesson-05.mp4',
     thumbnail: 'thumbnails/lesson-05.jpg',
+    poster: 'posters/lesson-05.jpg',
     shape: 'portrait',
     duration: '2 min',
     prompts: DEFAULT_PROMPTS,
@@ -105,6 +115,7 @@ export const lessons: Lesson[] = [
     description: PLACEHOLDER,
     video: 'videos/lesson-06.mp4',
     thumbnail: 'thumbnails/lesson-06.jpg',
+    poster: 'posters/lesson-06.jpg',
     shape: 'portrait',
     duration: '4 min',
     prompts: DEFAULT_PROMPTS,
@@ -115,6 +126,7 @@ export const lessons: Lesson[] = [
     description: PLACEHOLDER,
     video: 'videos/lesson-07.mp4',
     thumbnail: 'thumbnails/lesson-07.jpg',
+    poster: 'posters/lesson-07.jpg',
     shape: 'portrait',
     duration: '4 min',
     prompts: DEFAULT_PROMPTS,

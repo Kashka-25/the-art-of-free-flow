@@ -870,6 +870,7 @@ button {
   gap: clamp(4px, 1.2vw, 12px);
   padding: 28px clamp(8px, 2vw, 18px) clamp(6px, 1.4vw, 14px);
   background: linear-gradient(to top, rgba(13, 11, 9, 0.72), rgba(13, 11, 9, 0));
+  container-type: inline-size;
   transition: opacity 0.45s var(--ease);
 }
 
@@ -1102,6 +1103,21 @@ button {
   .player__btn {
     width: 36px;
     height: 36px;
+  }
+}
+
+/* A narrow player (tall videos, small windows): keep every control on one row. */
+@container (max-width: 440px) {
+  .player__volume-slider {
+    display: none;
+  }
+  .player__time {
+    min-width: 0;
+    font-size: 0.74rem;
+  }
+  .player__btn {
+    width: 34px;
+    height: 34px;
   }
 }
 
