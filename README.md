@@ -33,7 +33,7 @@ Tips: export as MP4 (H.264 + AAC) with "fast start" / "web optimised" ticked, so
 
 ## Change lesson titles, descriptions and prompts
 
-Everything lives in **`src/data/lessons.ts`**: one block per lesson with `title`, `description`, `video`, optional `thumbnail` and `duration`, and the `prompts` shown above the journal.
+Everything lives in **`src/data/lessons.ts`**: one block per lesson with `title`, `description` (the short line on the lesson card), `notes` (the full lesson notes under the video: paragraphs, `{ heading }`, `{ quote }` and `{ steps: [...] }` for a numbered list), `video`, optional `thumbnail` and `duration`, and the `prompts` shown above the journal.
 The landing and completion words are in **`src/data/course.ts`**.
 
 Covers: `thumbnail` is the wide card image (`public/thumbnails/`), `poster` the tall image in the player before it plays (`public/posters/`). Without either, each lesson gets its own drawn pattern.

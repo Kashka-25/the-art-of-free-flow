@@ -788,6 +788,48 @@ button {
   font-variation-settings: 'SOFT' 100, 'opsz' 32;
 }
 
+.notes {
+  display: grid;
+  gap: 1em;
+  margin-bottom: 36px;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.notes__heading {
+  margin-top: 0.8em;
+  font-family: var(--body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+
+.notes__quote {
+  margin: 0.4em 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--ochre);
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem);
+  line-height: 1.45;
+  font-weight: 360;
+  font-variation-settings: 'SOFT' 100, 'opsz' 32;
+  overflow-wrap: anywhere;
+}
+
+.notes__steps {
+  display: grid;
+  gap: 0.7em;
+  padding-left: 1.6em;
+}
+
+.notes__steps li::marker {
+  font-family: var(--display);
+  color: var(--clay);
+}
+
 .lesson__complete {
   display: flex;
   flex-wrap: wrap;

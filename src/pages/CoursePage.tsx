@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { lessons } from '../data/lessons';
 import { LessonNavigation } from '../components/LessonNavigation';
+import { LessonNotes } from '../components/LessonNotes';
 import { ReflectionJournal } from '../components/ReflectionJournal';
 import { VideoPlayer } from '../components/VideoPlayer';
 import { isCourseComplete } from '../lib/progress';
@@ -72,7 +73,11 @@ export function CoursePage({ number }: { number: number }) {
 
       <div className="lesson__body page-enter">
         <div className="lesson__about">
-          <p className="lesson__description">{lesson.description}</p>
+          {lesson.notes?.length ? (
+            <LessonNotes notes={lesson.notes} />
+          ) : (
+            <p className="lesson__description">{lesson.description}</p>
+          )}
           <div className="lesson__complete">
             {isComplete ? (
               <>
