@@ -316,16 +316,15 @@ button {
    His top half, fading out at the edges, so no frame is needed. */
 .topbar__mascot {
   width: auto;
-  height: 62px;
-  filter: drop-shadow(0 4px 8px rgba(42, 34, 27, 0.18));
+  height: 66px;
 }
 
 @media (min-width: 720px) {
   .topbar__mascot {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 6px; /* never touches the window edge, so nothing is cut */
+    transform: translateX(-50%);
   }
 }
 
@@ -333,8 +332,8 @@ button {
   .topbar__mascot {
     order: 1;
     margin-left: auto;
-    height: 54px;
-    margin-block: -8px;
+    height: 60px;
+    margin-block: -10px;
   }
   .topbar__links {
     order: 2;

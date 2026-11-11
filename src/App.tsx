@@ -57,8 +57,8 @@ export function App() {
           src={mediaUrl('coco-mascot-top.png')}
           alt=""
           title="Coco"
-          width={198}
-          height={180}
+          width={301}
+          height={200}
           decoding="async"
         />
       </div>
