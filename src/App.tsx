@@ -54,11 +54,11 @@ export function App() {
         )}
         <img
           className="topbar__mascot"
-          src={mediaUrl('coco-mascot.png')}
+          src={mediaUrl('coco-mascot-top.png')}
           alt=""
           title="Coco"
-          width={44}
-          height={44}
+          width={198}
+          height={180}
           decoding="async"
         />
       </div>

@@ -40,7 +40,7 @@ Covers: `thumbnail` is the wide card image (`public/thumbnails/`), `poster` the 
 
 The current covers are rockstar Coco from Cassidy's "Chill Rockstar Monkey Sticker Set", one pose per lesson in sheet order (top row left to right, then the bottom row): 1 peace sign, 2 laughing fist, 3 singing out, 4 meditating, 5 hand behind head, 6 heart hands, 7 lightbulb idea. Rebuild them with `scripts/make-rockstar-covers.py` (steps in the file).
 
-The landing-page star (`public/coco-rockstar*.webp`) and the top-bar badge (`public/coco-mascot.png`) come from Cassidy's main rockstar Coco. The image generator drew a checkerboard into both images instead of real transparency; `scripts/cutout-checkerboard.py` removes it.
+The landing-page star (`public/coco-rockstar*.webp`) and the top-bar Coco (`public/coco-mascot-top.png`, his top half with soft edges) come from Cassidy's main rockstar Coco. The image generator drew a checkerboard into both images instead of real transparency; `scripts/cutout-checkerboard.py` removes it.
 
 ## How it's built
 
