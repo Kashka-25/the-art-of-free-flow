@@ -42,7 +42,18 @@ export function App() {
 
       <div className={`topbar${route.name === 'lesson' ? ' topbar--dark' : ''}`}>
         <a className="topbar__mark" href={href.home()}>
-          <span className="topbar__mark-wave" aria-hidden="true">~</span> {course.title}
+          <img
+            className="topbar__mascot"
+            src={mediaUrl('coco-mascot-top.png')}
+            alt=""
+            title="Coco"
+            width={301}
+            height={200}
+            decoding="async"
+          />
+          <span>
+            <span className="topbar__mark-wave" aria-hidden="true">~</span> {course.title}
+          </span>
         </a>
         {route.name === 'lesson' ? (
           <ProgressTracker current={route.number} />
@@ -52,15 +63,6 @@ export function App() {
             <a href={href.journal()} aria-current={route.name === 'journal' ? 'page' : undefined}>Journal</a>
           </nav>
         )}
-        <img
-          className="topbar__mascot"
-          src={mediaUrl('coco-mascot-top.png')}
-          alt=""
-          title="Coco"
-          width={301}
-          height={200}
-          decoding="async"
-        />
       </div>
 
       {route.name === 'lesson' ? (

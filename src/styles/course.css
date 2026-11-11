@@ -312,37 +312,29 @@ button {
   outline-color: var(--ochre);
 }
 
-/* Coco, the mascot: top centre on wide screens, top right corner on phones.
-   His top half, fading out at the edges, so no frame is needed. */
-.topbar__mascot {
-  width: auto;
-  height: 66px;
+/* Coco, the mascot, just left of the title. His top half fades out below the chest,
+   so no frame is needed; negative margins keep the bar from growing. */
+.topbar__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-@media (min-width: 720px) {
-  .topbar__mascot {
-    position: absolute;
-    left: 50%;
-    top: 6px; /* never touches the window edge, so nothing is cut */
-    transform: translateX(-50%);
-  }
+.topbar__mascot {
+  width: auto;
+  height: 58px;
+  margin-block: -12px;
+  margin-left: -6px;
 }
 
 @media (max-width: 719px) {
   .topbar__mascot {
-    order: 1;
-    margin-left: auto;
-    height: 60px;
-    margin-block: -10px;
-  }
-  .topbar__links {
-    order: 2;
+    height: 50px;
   }
   .topbar .tracker {
-    order: 2;
     flex-basis: 100%;
   }
-  /* Phones: Lessons / Journal sit under the title row, Coco keeps the corner. */
+  /* Phones: Lessons / Journal sit under the title row. */
   .topbar__links {
     flex-basis: 100%;
     gap: 20px;
