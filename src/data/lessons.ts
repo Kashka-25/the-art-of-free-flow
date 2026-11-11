@@ -107,7 +107,7 @@ export const lessons: Lesson[] = [
   },
   {
     number: 3,
-    title: 'Stringing Words Together',
+    title: 'Stringing Language Together',
     description: "Let your words do what words do. We're not aiming for perfection; we're aiming for continuation.",
     notes: [
       { quote: 'Let your words do what words do.' },
@@ -134,7 +134,7 @@ export const lessons: Lesson[] = [
   },
   {
     number: 4,
-    title: 'Putting the Juice Together',
+    title: 'Squeezing the Juice',
     description: 'Bring your body to life, and watch your voice come alive.',
     notes: [
       { quote: "Freestyle is 'free flow'." },
