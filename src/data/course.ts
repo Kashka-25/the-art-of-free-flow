@@ -17,7 +17,7 @@ export const course = {
     donationLabel: 'Leave a donation',
     donationText:
       "This course was first made for a friend, then shared from there. The videos were never designed for perfection, just to be real. If they've supported you and you'd like to support me in return, you're welcome to leave a donation. There's no pressure at all; it's simply an invitation.",
-    portfolioUrl: 'https://kashka-25.github.io/creative-universe/',
+    portfolioUrl: 'https://kashka-25.github.io/creative-universe/#/enquire',
     portfolioLabel: 'Visit my Creative Universe',
     portfolioText:
       "Dreaming of bringing something into the digital world, or wanting a hand with technology? Have a look through my portfolio, and reach out with an enquiry. I'd love to hear about it.",
