@@ -13,7 +13,7 @@ export const course = {
    */
   support: {
     heading: 'If this helped you',
-    donationUrl: '',
+    donationUrl: 'https://ko-fi.com/yourownuniverse',
     donationLabel: 'Leave a donation',
     donationText:
       "This course was first made for a friend, then shared from there. The videos were never designed for perfection, just to be real. If they've supported you and you'd like to support me in return, you're welcome to leave a donation. There's no pressure at all; it's simply an invitation.",
