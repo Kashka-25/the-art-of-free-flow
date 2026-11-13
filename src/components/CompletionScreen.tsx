@@ -5,6 +5,7 @@ import { isCourseComplete, resumeLesson } from '../lib/progress';
 import { usePageFocus, useProgress } from '../lib/useProgress';
 import { mediaUrl, pad2 } from '../lib/media';
 import { FlowLines } from './FlowLines';
+import { SupportNote } from './SupportNote';
 
 export function CompletionScreen() {
   const { progress } = useProgress();
@@ -32,6 +33,7 @@ export function CompletionScreen() {
   }
 
   return (
+    <>
     <main id="main" className="completion page-enter">
       <FlowLines className="completion__lines" />
       <div className="completion__inner">
@@ -54,5 +56,7 @@ export function CompletionScreen() {
         </div>
       </div>
     </main>
+    <SupportNote />
+    </>
   );
 }

@@ -498,6 +498,40 @@ button {
   }
 }
 
+/* ---------- Support note ---------- */
+
+.support {
+  background: var(--paper-deep);
+  padding: clamp(56px, 8vw, 104px) var(--gutter);
+}
+
+.support__inner {
+  max-width: var(--wide);
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.support__title {
+  font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3rem);
+  margin-bottom: 18px;
+}
+
+.support__columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 36px clamp(32px, 6vw, 80px);
+}
+
+.support__item {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 20px;
+  max-width: 52ch;
+  line-height: 1.65;
+}
+
 /* ---------- Course overview ---------- */
 
 .overview {
