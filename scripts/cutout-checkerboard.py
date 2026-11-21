@@ -2,7 +2,7 @@
 
 Usage: python scripts/cutout-checkerboard.py in.webp out.png preview.png [x0,y0,x1,y1 ...]
 The optional boxes mark glow painted over the checkerboard (e.g. music notes); inside them only
-solid colour is kept. Needs Pillow and numpy. Used for rockstar Coco (public/coco-rockstar*.webp).
+solid colour is kept. Needs Pillow and numpy. Used for rockstar Earnest (public/coco-rockstar*.webp).
 """
 import sys
 import numpy as np

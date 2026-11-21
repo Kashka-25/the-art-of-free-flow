@@ -71,7 +71,7 @@ export function Hero({ headingRef }: { headingRef: Ref<HTMLHeadingElement> }) {
           src={mediaUrl('coco-rockstar.webp')}
           srcSet={`${mediaUrl('coco-rockstar-small.webp')} 520w, ${mediaUrl('coco-rockstar.webp')} 900w`}
           sizes="(min-width: 960px) 40vw, 80vw"
-          alt="Coco, the course's mascot: a chill monkey in an orange beanie and sunglasses, sitting cross-legged on a cloud with a golden microphone, making a peace sign"
+          alt="Earnest, the course's mascot: a chill monkey in an orange beanie and sunglasses, sitting cross-legged on a cloud with a golden microphone, making a peace sign"
           width={900}
           height={1119}
           decoding="async"
