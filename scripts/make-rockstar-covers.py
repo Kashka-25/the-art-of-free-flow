@@ -1,4 +1,4 @@
-"""Builds the lesson covers from Cassidy's rockstar Coco sticker set (one pose per lesson).
+"""Builds the lesson covers from Cassidy's rockstar Earnest sticker set (one pose per lesson).
 
 Usage:
   1. Cut the sheet out of its drawn-in checkerboard and split it into pose-1.png ... pose-7.png

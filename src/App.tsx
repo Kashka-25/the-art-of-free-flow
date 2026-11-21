@@ -46,7 +46,7 @@ export function App() {
             className="topbar__mascot"
             src={mediaUrl('coco-mascot-top.png')}
             alt=""
-            title="Coco"
+            title="Earnest"
             width={301}
             height={200}
             decoding="async"
